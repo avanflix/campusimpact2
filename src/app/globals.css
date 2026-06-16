@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  --color-paper: #FFF8F0;
+  --color-paper-soft: #FFF1E0;
+  --color-ink: #2D2A32;
+  --color-ink-soft: #6B6573;
+  --color-coral: #FF5D5D;
+  --color-coral-soft: #FFE3E1;
+  --color-sun: #FFC857;
+  --color-sun-soft: #FFF3D6;
+  --color-teal: #4ECDC4;
+  --color-teal-soft: #DFF8F5;
+  --color-indigo: #5B5FEF;
+  --color-indigo-soft: #E7E8FD;
+  --color-line: #EAE2D6;
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-paper-soft: var(--color-paper-soft);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-coral: var(--color-coral);
+  --color-coral-soft: var(--color-coral-soft);
+  --color-sun: var(--color-sun);
+  --color-sun-soft: var(--color-sun-soft);
+  --color-teal: var(--color-teal);
+  --color-teal-soft: var(--color-teal-soft);
+  --color-indigo: var(--color-indigo);
+  --color-indigo-soft: var(--color-indigo-soft);
+  --color-line: var(--color-line);
+  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", Arial, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "Space Mono", "SF Mono", "Roboto Mono", Menlo, monospace;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.font-mono-tag {
+  font-family: var(--font-mono), monospace;
+}
+
+::selection {
+  background: var(--color-sun);
+  color: var(--color-ink);
+}
+
+.form-input {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-line);
+  background: #ffffff;
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+  color: var(--color-ink);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-input::placeholder {
+  color: var(--color-ink-soft);
+  opacity: 0.6;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-indigo);
+  box-shadow: 0 0 0 3px var(--color-indigo-soft);
+}
+
+.dotted-rule {
+  background-image: radial-gradient(circle, var(--color-ink-soft) 1px, transparent 1.5px);
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+  height: 1px;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 16s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin-slow {
+    animation: none;
+  }
+}
